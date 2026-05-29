@@ -15,6 +15,118 @@ padding:0;
 box-sizing:border-box;
 }
 
+<section class="gift-section">
+    <div class="gift-card" onclick="this.classList.toggle('opened')">
+        <div class="gift-front">
+            <div class="gift-icon">🎁</div>
+            <h2>Hay una última sorpresa...</h2>
+            <p>Toca para abrir</p>
+        </div>
+
+        <div class="gift-back">
+            <h2>Feliz Cumpleaños, Naybeth ❤️</h2>
+
+            <p>
+                Este año quiero regalarte algo más que un objeto.
+                Quiero regalarte una experiencia que puedas disfrutar y recordar.
+            </p>
+
+            <p>
+                Tienes un regalo esperándote:
+            </p>
+
+            <div class="gift-options">
+                ✈️ Un vuelo para tu próxima aventura
+                <br><br>
+                o
+                <br><br>
+                🏨 Un hospedaje para una escapada especial
+            </div>
+
+            <p>
+                No tienes que decidir ahora.
+                Tómate tu tiempo y elige lo que más te ilusione cuando llegue el momento.
+            </p>
+
+            <p class="signature">
+                Con cariño,<br>
+                Tu hermano ❤️
+            </p>
+        </div>
+    </div>
+
+.gift-section{
+    padding:80px 20px;
+    display:flex;
+    justify-content:center;
+}
+
+.gift-card{
+    width:100%;
+    max-width:700px;
+    cursor:pointer;
+    perspective:1000px;
+}
+
+.gift-front,
+.gift-back{
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    transition:all .8s ease;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.gift-front{
+    background:linear-gradient(135deg,#d4af37,#f4e6a1);
+    color:#222;
+}
+
+.gift-back{
+    background:white;
+    color:#333;
+    display:none;
+}
+
+.gift-card.opened .gift-front{
+    display:none;
+}
+
+.gift-card.opened .gift-back{
+    display:block;
+    animation:fadeIn .8s ease;
+}
+
+.gift-icon{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.gift-options{
+    margin:25px 0;
+    font-size:1.2rem;
+    font-weight:600;
+    line-height:1.8;
+}
+
+.signature{
+    margin-top:30px;
+    font-style:italic;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+  
+</section>
+  
 body{
 background:#0f0f0f;
 color:white;
