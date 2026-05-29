@@ -3,10 +3,288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feliz Cumpleaños Naybeth</title>
+<title>Feliz Cumpleaños Naybeth ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+overflow-x:hidden;
+font-family:'Montserrat',sans-serif;
+}
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:30px;
+}
+
+h1,h2{
+font-family:'Cormorant Garamond',serif;
+font-weight:600;
+text-align:center;
+}
+
+.hero{
+position:relative;
+background:black;
+}
+
+.hero video{
+width:100%;
+height:100vh;
+object-fit:cover;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.35);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.overlay h1{
+font-size:3rem;
+text-shadow:0 0 20px rgba(255,255,255,.5);
+padding:20px;
+}
+
+.collage{
+background:#121212;
+}
+
+.collage h2{
+font-size:3rem;
+margin-bottom:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+max-width:1000px;
+width:100%;
+}
+
+.grid img{
+width:100%;
+height:230px;
+object-fit:cover;
+border-radius:16px;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+transition:.4s;
+}
+
+.grid img:hover{
+transform:scale(1.03);
+}
+
+.signature{
+margin-top:30px;
+font-size:1.2rem;
+opacity:.9;
+text-align:center;
+}
+
+.message{
+background:linear-gradient(180deg,#101010,#1a1a1a);
+text-align:center;
+}
+
+.message-box{
+max-width:800px;
+line-height:1.8;
+font-size:1.15rem;
+}
+
+.message h2{
+font-size:3rem;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+margin-top:40px;
+padding:18px 35px;
+border-radius:999px;
+text-decoration:none;
+background:#d4af37;
+color:black;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+.overlay h1{
+font-size:2.2rem;
+}
+
+.collage h2,
+.message h2{
+font-size:2.2rem;
+}
+
+.grid{
+grid-template-columns:1fr 1fr;
+}
+
+.grid img{
+height:180px;
+}
+}
+
+</style>
 </head>
-<body style="font-family:Arial;text-align:center;padding:50px;">
-<h1>🎂 Feliz Cumpleaños Naybeth ❤️</h1>
-<p>Tu sorpresa está siendo preparada...</p>
+
+<body>
+
+<!-- MÚSICA -->
+
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9b5b64.mp3?filename=happy-birthday-background-112194.mp3" type="audio/mpeg">
+</audio>
+
+<!-- VIDEO -->
+
+<section class="hero">
+
+<video id="introVideo" autoplay muted playsinline>
+<source src="IMG_6315.mov" type="video/quicktime">
+</video>
+
+<div class="overlay">
+<h1>
+Feliz Cumpleaños Naybeth ❤️
+</h1>
+</div>
+
+</section>
+
+<!-- COLLAGE -->
+
+<section class="collage fade">
+
+<h2>🎂 Feliz Cumpleaños Naybeth 🎂</h2>
+
+<div class="grid">
+
+<img src="IMG_8351.jpeg" alt="">
+<img src="IMG_8352.jpeg" alt="">
+
+<img src="IMG_3671.jpeg" alt="">
+<img src="IMG_6196.jpeg" alt="">
+
+<img src="IMG_7730.jpeg" alt="">
+<img src="IMG_8353.jpeg" alt="">
+
+</div>
+
+<div class="signature">
+Con cariño,<br>
+tu hermano ❤️
+</div>
+
+</section>
+
+<!-- MENSAJE -->
+
+<section class="message fade">
+
+<div class="message-box">
+
+<h2>Para ti</h2>
+
+<p>
+
+Espero que este nuevo año de vida te regale
+muchas alegrías, nuevas experiencias y momentos
+que se conviertan en recuerdos inolvidables.
+
+<br><br>
+
+Gracias por todos los momentos compartidos,
+por las aventuras, las risas y por ser una persona
+tan especial.
+
+<br><br>
+
+Como parte de tu regalo de cumpleaños tendrás
+la oportunidad de disfrutar una experiencia muy especial.
+
+<br><br>
+
+Lo mejor es que podrás decidir más adelante
+qué opción prefieres y compartirla con quien tú quieras.
+
+<br><br>
+
+Te quiero mucho.
+
+</p>
+
+<a class="btn"
+href="https://drive.google.com/drive/folders/1GiyRAjbu27N_spUDGzo60_6-fDPDzay9"
+target="_blank">
+
+🎁 Ver mi regalo
+
+</a>
+
+</div>
+
+</section>
+
+<script>
+
+const music = document.getElementById('music');
+
+document.addEventListener('click',()=>{
+music.play();
+},{once:true});
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+
+document.querySelectorAll('.fade').forEach(el=>{
+observer.observe(el);
+});
+
+</script>
+
 </body>
 </html>
