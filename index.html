@@ -4,136 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Feliz Cumpleaños Naybeth ❤️</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
-
-<section class="gift-section">
-    <div class="gift-card" onclick="this.classList.toggle('opened')">
-        <div class="gift-front">
-            <div class="gift-icon">🎁</div>
-            <h2>Hay una última sorpresa...</h2>
-            <p>Toca para abrir</p>
-        </div>
-
-        <div class="gift-back">
-            <h2>Feliz Cumpleaños, Naybeth ❤️</h2>
-
-            <p>
-                Este año quiero regalarte algo más que un objeto.
-                Quiero regalarte una experiencia que puedas disfrutar y recordar.
-            </p>
-
-            <p>
-                Tienes un regalo esperándote:
-            </p>
-
-            <div class="gift-options">
-                ✈️ Un vuelo para tu próxima aventura
-                <br><br>
-                o
-                <br><br>
-                🏨 Un hospedaje para una escapada especial
-            </div>
-
-            <p>
-                No tienes que decidir ahora.
-                Tómate tu tiempo y elige lo que más te ilusione cuando llegue el momento.
-            </p>
-
-            <p class="signature">
-                Con cariño,<br>
-                Tu hermano ❤️
-            </p>
-        </div>
-    </div>
-
-.gift-section{
-    padding:80px 20px;
-    display:flex;
-    justify-content:center;
-}
-
-.gift-card{
-    width:100%;
-    max-width:700px;
-    cursor:pointer;
-    perspective:1000px;
-}
-
-.gift-front,
-.gift-back{
-    border-radius:20px;
-    padding:40px;
-    text-align:center;
-    transition:all .8s ease;
-    box-shadow:0 15px 40px rgba(0,0,0,.15);
-}
-
-.gift-front{
-    background:linear-gradient(135deg,#d4af37,#f4e6a1);
-    color:#222;
-}
-
-.gift-back{
-    background:white;
-    color:#333;
-    display:none;
-}
-
-.gift-card.opened .gift-front{
-    display:none;
-}
-
-.gift-card.opened .gift-back{
-    display:block;
-    animation:fadeIn .8s ease;
-}
-
-.gift-icon{
-    font-size:4rem;
-    margin-bottom:20px;
-}
-
-.gift-options{
-    margin:25px 0;
-    font-size:1.2rem;
-    font-weight:600;
-    line-height:1.8;
-}
-
-.signature{
-    margin-top:30px;
-    font-style:italic;
-}
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-  
-</section>
-  
 body{
 background:#0f0f0f;
 color:white;
 overflow-x:hidden;
 font-family:'Montserrat',sans-serif;
 }
-
 section{
 min-height:100vh;
 display:flex;
@@ -142,24 +25,20 @@ justify-content:center;
 align-items:center;
 padding:30px;
 }
-
-h1,h2{
+h1,h2,h3,h4{
 font-family:'Cormorant Garamond',serif;
 font-weight:600;
 text-align:center;
 }
-
 .hero{
 position:relative;
 background:black;
 }
-
 .hero video{
 width:100%;
 height:100vh;
 object-fit:cover;
 }
-
 .overlay{
 position:absolute;
 inset:0;
@@ -167,23 +46,34 @@ background:rgba(0,0,0,.35);
 display:flex;
 align-items:center;
 justify-content:center;
+text-align:center;
+padding:20px;
 }
-
 .overlay h1{
 font-size:3rem;
 text-shadow:0 0 20px rgba(255,255,255,.5);
-padding:20px;
 }
-
+.music-btn{
+position:fixed;
+top:20px;
+right:20px;
+z-index:1000;
+padding:12px 20px;
+border:none;
+border-radius:999px;
+background:#d4af37;
+color:black;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
 .collage{
 background:#121212;
 }
-
 .collage h2{
 font-size:3rem;
 margin-bottom:30px;
 }
-
 .grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
@@ -191,7 +81,6 @@ gap:12px;
 max-width:1000px;
 width:100%;
 }
-
 .grid img{
 width:100%;
 height:230px;
@@ -200,190 +89,234 @@ border-radius:16px;
 box-shadow:0 10px 25px rgba(0,0,0,.4);
 transition:.4s;
 }
-
 .grid img:hover{
 transform:scale(1.03);
 }
-
-.signature{
+.photo-signature{
 margin-top:30px;
 font-size:1.2rem;
 opacity:.9;
 text-align:center;
 }
-
 .message{
 background:linear-gradient(180deg,#101010,#1a1a1a);
 text-align:center;
 }
-
 .message-box{
-max-width:800px;
-line-height:1.8;
+max-width:850px;
+line-height:1.9;
 font-size:1.15rem;
 }
-
 .message h2{
 font-size:3rem;
 margin-bottom:30px;
 }
-
-.btn{
+.gift-section{
+background:#151515;
+padding:80px 20px;
+}
+.gift-card{
+width:100%;
+max-width:850px;
+cursor:pointer;
+}
+.gift-front,
+.gift-back{
+padding:40px;
+border-radius:24px;
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
+.gift-front{
+background:linear-gradient(135deg,#d4af37,#f4e6a1);
+color:#222;
+}
+.gift-back{
+display:none;
+background:white;
+color:#222;
+}
+.gift-card.opened .gift-front{
+display:none;
+}
+.gift-card.opened .gift-back{
+display:block;
+animation:fadeIn .8s ease;
+}
+.gift-icon{
+font-size:5rem;
+margin-bottom:20px;
+}
+.hotel-option{
+margin:25px 0;
+padding:25px;
+border-radius:16px;
+background:#f5f5f5;
+}
+.hotel-btn{
 display:inline-block;
-margin-top:40px;
-padding:18px 35px;
-border-radius:999px;
-text-decoration:none;
+margin-top:15px;
+padding:12px 25px;
 background:#d4af37;
 color:black;
+text-decoration:none;
+border-radius:999px;
 font-weight:600;
-transition:.3s;
 }
-
-.btn:hover{
-transform:translateY(-3px);
+.gift-signature{
+margin-top:25px;
+font-style:italic;
 }
-
 .fade{
 opacity:0;
 transform:translateY(30px);
 transition:1s;
 }
-
 .fade.show{
 opacity:1;
 transform:translateY(0);
 }
-
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 @media(max-width:768px){
-
 .overlay h1{
 font-size:2.2rem;
 }
-
 .collage h2,
 .message h2{
 font-size:2.2rem;
 }
-
 .grid{
 grid-template-columns:1fr 1fr;
 }
-
 .grid img{
 height:180px;
 }
+.gift-front,
+.gift-back{
+padding:25px;
 }
-
+}
 </style>
 </head>
-
 <body>
-
-<!-- MÚSICA -->
-
+<button id="playMusicBtn" class="music-btn">
+🎵 Iniciar experiencia
+</button>
 <audio id="music" loop>
 <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9b5b64.mp3?filename=happy-birthday-background-112194.mp3" type="audio/mpeg">
 </audio>
-
-<!-- VIDEO -->
-
 <section class="hero">
-
-<video id="introVideo" autoplay muted playsinline>
+<video autoplay muted playsinline>
 <source src="IMG_6315.mov" type="video/quicktime">
 </video>
-
 <div class="overlay">
-<h1>
-Feliz Cumpleaños Naybeth ❤️
-</h1>
+<h1>Feliz Cumpleaños Naybeth ❤️</h1>
 </div>
-
 </section>
-
-<!-- COLLAGE -->
-
 <section class="collage fade">
-
-<h2>🎂 Feliz Cumpleaños Naybeth 🎂</h2>
-
+<h2>🎂 Feliz Cumpleaños 🎂</h2>
 <div class="grid">
-
 <img src="IMG_8351.jpeg" alt="">
 <img src="IMG_8352.jpeg" alt="">
-
 <img src="IMG_3671.jpeg" alt="">
 <img src="IMG_6196.jpeg" alt="">
-
 <img src="IMG_7730.jpeg" alt="">
 <img src="IMG_8353.jpeg" alt="">
-
 </div>
-
-<div class="signature">
+<div class="photo-signature">
 Con cariño,<br>
 tu hermano ❤️
 </div>
-
 </section>
-
-<!-- MENSAJE -->
-
 <section class="message fade">
-
 <div class="message-box">
-
 <h2>Para ti</h2>
-
 <p>
 
-Espero que este nuevo año de vida te regale
-muchas alegrías, nuevas experiencias y momentos
-que se conviertan en recuerdos inolvidables.
+Espero que este nuevo año de vida esté lleno de momentos inolvidables,
+nuevas experiencias y muchas razones para sonreír.
 
-<br><br>
+Gracias por todas las aventuras compartidas, las risas y los recuerdos
+que hemos construido juntos.
 
-Gracias por todos los momentos compartidos,
-por las aventuras, las risas y por ser una persona
-tan especial.
-
-<br><br>
-
-Como parte de tu regalo de cumpleaños tendrás
-la oportunidad de disfrutar una experiencia muy especial.
-
-<br><br>
-
-Lo mejor es que podrás decidir más adelante
-qué opción prefieres y compartirla con quien tú quieras.
-
-<br><br>
-
-Te quiero mucho.
+Te quiero mucho y deseo que este cumpleaños sea tan especial como tú.
 
 </p>
-
-<a class="btn"
-href="https://drive.google.com/drive/folders/1GiyRAjbu27N_spUDGzo60_6-fDPDzay9"
-target="_blank">
-
-🎁 Ver mi regalo
-
-</a>
-
 </div>
-
 </section>
+<section class="gift-section fade">
+<div class="gift-card" onclick="openGift(this)">
+<div class="gift-front">
+<div class="gift-icon">🎁</div>
+<h2>Hay una última sorpresa...</h2>
+<p>Toca para descubrir tu regalo</p>
+</div>
+<div class="gift-back">
+<h2>🎉 Tu regalo de cumpleaños 🎉</h2>
+<p>
+Quiero regalarte algo más que un objeto.
+Quiero regalarte una experiencia para descansar,
+disfrutar y crear nuevos recuerdos.
+</p>
+<div class="hotel-option">
+<h3>🏨 Opción 1</h3>
+<h4>Galería Plaza Reforma</h4>
+<p>
+✔ Habitación doble<br>
+✔ 2 noches de hospedaje<br>
+✔ Del 23 al 25 de octubre<br>
+✔ Day Pass para 1 persona
+</p>
 
+Ver hotel
+</div>
+<div class="hotel-option">
+<h3>🏨 Opción 2</h3>
+<h4>City Centro by Marriott</h4>
+<p>
+✔ Habitación doble<br>
+✔ 2 noches de hospedaje<br>
+✔ Del 23 al 25 de octubre<br>
+✔ Day Pass para 1 persona
+</p>
+
+Ver hotel
+</div>
+<p style="margin-top:25px;">
+Puedes elegir la opción que más te guste.
+Lo importante es que disfrutes esta experiencia ❤️
+</p>
+<p class="gift-signature">
+Con todo mi cariño,<br>
+tu hermano.
+</p>
+</div>
+</div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script>
-
 const music = document.getElementById('music');
-
-document.addEventListener('click',()=>{
+document.getElementById('playMusicBtn').addEventListener('click', () => {
 music.play();
-},{once:true});
-
+document.getElementById('playMusicBtn').style.display = 'none';
+});
+function openGift(card){
+card.classList.add('opened');
+confetti({
+particleCount:200,
+spread:120,
+origin:{y:0.6}
+});
+}
 const observer = new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
@@ -391,12 +324,9 @@ entry.target.classList.add('show');
 }
 });
 });
-
 document.querySelectorAll('.fade').forEach(el=>{
 observer.observe(el);
 });
-
 </script>
-
 </body>
-</html>
+</ht
