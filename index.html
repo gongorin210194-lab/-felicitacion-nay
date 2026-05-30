@@ -95,7 +95,6 @@ transform:scale(1.03);
 .photo-signature{
 margin-top:30px;
 font-size:1.2rem;
-opacity:.9;
 text-align:center;
 }
 .message{
@@ -162,6 +161,10 @@ color:black;
 text-decoration:none;
 border-radius:999px;
 font-weight:600;
+transition:.3s;
+}
+.hotel-btn:hover{
+transform:translateY(-2px);
 }
 .gift-signature{
 margin-top:25px;
@@ -211,8 +214,8 @@ padding:25px;
 <button id="playMusicBtn" class="music-btn">
 🎵 Iniciar experiencia
 </button>
-<audio id="music" loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9b5b64.mp3?filename=happy-birthday-background-112194.mp3" type="audio/mpeg">
+<audio id="music" preload="auto" loop>
+<source src="happy-birthday.mp3" type="audio/mpeg">
 </audio>
 <section class="hero">
 <video autoplay muted playsinline>
@@ -245,8 +248,8 @@ tu hermano ❤️
 Espero que este nuevo año de vida esté lleno de momentos inolvidables,
 nuevas experiencias y muchas razones para sonreír.
 
-Gracias por todas las aventuras compartidas, las risas y los recuerdos
-que hemos construido juntos.
+Gracias por todas las aventuras compartidas,
+las risas y los recuerdos que hemos construido juntos.
 
 Te quiero mucho y deseo que este cumpleaños sea tan especial como tú.
 
@@ -264,11 +267,21 @@ Te quiero mucho y deseo que este cumpleaños sea tan especial como tú.
 <h2>🎉 Tu regalo de cumpleaños 🎉</h2>
 <p>
 Quiero regalarte algo más que un objeto.
-Quiero regalarte una experiencia para descansar,
-disfrutar y crear nuevos recuerdos.
+Quiero regalarte experiencias que puedas disfrutar,
+recordar y compartir con alguien especial.
 </p>
 <div class="hotel-option">
-<h3>🏨 Opción 1</h3>
+<h3>✈️ Opción 1</h3>
+<h4>Viaje para una nueva aventura</h4>
+<p>
+✔ Viaje redondo nacional<br>
+✔ Para 2 personas<br>
+✔ Disponible para utilizar durante 2026<br>
+✔ Destino a elegir posteriormente
+</p>
+</div>
+<div class="hotel-option">
+<h3>🏨 Opción 2</h3>
 <h4>Galería Plaza Reforma</h4>
 <p>
 ✔ Habitación doble<br>
@@ -277,10 +290,12 @@ disfrutar y crear nuevos recuerdos.
 ✔ Day Pass para 1 persona
 </p>
 
-Ver hotel
+📸 Ver imágenes del hotel
+
+</a>
 </div>
 <div class="hotel-option">
-<h3>🏨 Opción 2</h3>
+<h3>🏨 Opción 3</h3>
 <h4>City Centro by Marriott</h4>
 <p>
 ✔ Habitación doble<br>
@@ -289,15 +304,28 @@ Ver hotel
 ✔ Day Pass para 1 persona
 </p>
 
-Ver hotel
+📸 Ver imágenes del hotel
+
+</a>
 </div>
 <p style="margin-top:25px;">
-Puedes elegir la opción que más te guste.
-Lo importante es que disfrutes esta experiencia ❤️
+
+No tienes que decidir ahora.
+
+Tómate tu tiempo y elige la experiencia
+que más te ilusione.
+
+❤️
+
 </p>
 <p class="gift-signature">
-Con todo mi cariño,<br>
+
+Con todo mi cariño,
+
+<br>
+
 tu hermano.
+
 </p>
 </div>
 </div>
@@ -305,9 +333,18 @@ tu hermano.
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script>
 const music = document.getElementById('music');
-document.getElementById('playMusicBtn').addEventListener('click', () => {
-music.play();
+music.volume = 0.35;
+document.getElementById('playMusicBtn').addEventListener('click', async () => {
+try {
+await music.play();
+document.getElementById('playMusicBtn').innerHTML = '🎵 Música activada';
+setTimeout(() => {
 document.getElementById('playMusicBtn').style.display = 'none';
+}, 1500);
+} catch (error) {
+console.error(error);
+alert('No se pudo iniciar la música.');
+}
 });
 function openGift(card){
 card.classList.add('opened');
@@ -329,4 +366,4 @@ observer.observe(el);
 });
 </script>
 </body>
-</ht
+</h
